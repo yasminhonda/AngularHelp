@@ -38,8 +38,8 @@ export class PeoplesComponent {
 
   // Função que chamamos com o (click)
   enviarPessoa() {
-    // ! transforma em um boolean
-    // se Nan, Undefined, ou vazio, resultado é true
+    // Valida se o input sera diferente de vazio
+    // se people.nome for igual a vazio OU people.sobrnome for igual vazio
     if (this.people.nome == '' || this.people.sobrenome == "") {
       alert('Insira um valor válido')
     } else {
