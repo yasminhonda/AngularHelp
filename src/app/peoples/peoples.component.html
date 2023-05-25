@@ -1,0 +1,41 @@
+<section>
+    <table class="table">
+        <tr class="table__header">
+            <th>Nome</th>
+            <th>Sobrenome</th>
+        </tr>
+        <!-- Diretivas são funções que serão executadas sempre que o compilador
+        do Angular as encontrar. 
+        Existem 3 tipos de diretivas: 
+            1. Diretivas de atributos (altera estilo dos elementos do DOM)
+            2. Diretivas estruturais (mudam a estrutura do DOM, adiciona ou remove elementos do DOM)
+            3. Componentes
+        Diretivas Estruturais tem como prefixo o asterisco* 
+        *ngFor é uma diretiva estrutual que permite percorrer um array, ou qualquer objeto iterável
+        e exibir cada item do array como elemento na tela
+        Assim, como em um laço de repetição, criamos uma variavel let, no ex.: let p, você pode 
+        dar qualquer nome. 
+        *ngFor="let p of peoples", diz para percorrer cada p dentro de peoples. Lembrando que peoples
+        é um Array[] criado no peoples.component.ts
+     -->
+        <tr *ngFor="let p of peoples" class="table__content">
+            <!-- Para exibir valores de uma variavel, utilizamos interpolação de chave {{}}
+            ou como pode chamar: Double mustache 
+            Nesse caso a variavel p é um objeto de nome e sobrenome p = {nome: '', sobrenome: ''}
+            assim, para acessar o nome, voce chama a variavel p.nome-->
+            <td>{{ p.nome }}</td>
+            <td>{{ p.sobrenome }}</td>
+        </tr>
+    </table>
+    <br>
+    <!-- [(ngModel)] é um two way data binding, termo dado a reatividade dos elementos. Ou seja, 
+    o que acontece no DOM(view), reflete no JavaScript/TypeScript, e vice e versa. Fluxo bidirecional
+    Para usar o ngModel é necessario importar o FormsModule no app.module.ts -->
+    <input class="input__name" placeholder="nome" [(ngModel)]="people.nome" />
+    <input class="input__sobrenome" placeholder="sobrenome" [(ngModel)]="people.sobrenome" />
+    <!-- (click) é um dos muitos eventos que temos no angular. 
+    Evento de click passa uma função que deverá existir no peoples.component.ts
+    Sempre que clicar no botão, chamará a função que criou -->
+    <button class="btn__salvar" (click)="enviarPessoa()">Enviar</button>
+    <p>Número de resultados: {{ count }}</p>
+</section>

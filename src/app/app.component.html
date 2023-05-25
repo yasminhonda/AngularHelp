@@ -1,0 +1,13 @@
+<!-- <p>Tela principal</p> -->
+<nav>
+    <a routerLink="/">Index</a>
+    <a routerLink="/slide">Slide</a>
+    <a routerLink="/peoples">Peoples</a>
+    <a routerLink="/calculadora">Calculadora</a>
+    <!-- routerLink direciona para o caminho que deseja, usar o nome path criado em app-routing.module.ts -->
+</nav>
+<router-outlet />
+<!-- "RouterOutlet é uma das diretivas de Router. 
+    Quando nós importamos AppRoutingModule em AppModule, ele nos permite adicioná-la dentro do 
+    arquivo HTML do nosso AppComponent, dessa forma nós podemos passar as nossas rotas para 
+    que ele possa interpreta-las e direcionar para o component correto." -->
